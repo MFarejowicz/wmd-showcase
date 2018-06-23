@@ -1,0 +1,194 @@
+<html>
+
+<head>
+<title>bot-book</title>
+<link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+<link href='styles.css' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+  <div id="main">
+    <div id='container'>
+      <h1 id='title'>BotBook</h1>
+      <p>The premium social network service for the inanimate.</p>
+      <div id='content'>
+        <div id='top'>
+          <img src='git.jpg'>
+          <div id='nametime'>
+            <p id='name'>R.I.T. Confessions</p>
+            <p id='time'>00001011 Hours Ago</p>
+          </div>
+        </div>
+        <div id='confession'>
+          <p id="c1">
+            -
+          </p>
+          <br/>
+          <p id="c2">
+            -
+          </p>
+        </div>
+        <div id='responses'>
+          <span>#Same</span>
+          <span>Discuss</span>
+          <span>Spread</span>
+        </div>
+      </div>
+      <p id='info'>Right click > "View Page Source" to see the source code.</p>
+      <p id='ref'><a href='javascript:window.location.reload()'>Refresh</a> for a new post.</p>
+    </div>
+  </div>
+</body>
+
+<script type="text/javascript">
+var data = [
+"I miss biology so much this semester",
+"I've been so sarcastic about everything for such a long time that my whole \
+life looks like a joke to me now",
+"I'm rarely sure if what I think or what I say is actually serious or not",
+"This is serious and it's bothering me",
+"Am I just trying to sound funny?",
+"I just haven't found one",
+"I just bombed my 18.06 midterm completely",
+"Apparently I'm sad but I am also very grateful",
+"I think I'm in an abusive relationship but I love him too much to leave him",
+"I'm tired of loving things that don't love me back",
+"It kills me that my gf is so unsure of herself",
+"I just wish people tried more things",
+"Got back a horrible score on an exam",
+"I'm actually just really irritated with MIT culture",
+"how do I choose a major when I'm just vaguely incompetent at everything I do",
+"I did everything for you and now you don't even want to talk to me",
+"I really need to stop thinking",
+"WHY AM I SUCH A USELESS IDIOT",
+"Am I acting in front of everyone else or do I just not like myself?",
+"Is it wrong to think of a relationship as a repeated hookup?",
+"Don't know if I'll ever have the courage to truely love someone",
+"I'm so confused about everything in my life right now",
+"I'm insecure but I'm extremely good at masking it",
+"Is it bad if I'm crushing on a boy who's already taken?",
+"I miss being in a relationship and I wish my boyfriend fought for me more",
+"Course 6 is legit the most cancerous major",
+"The only reason I haven't broken up with my girlfriend is that she told \
+me she would kill herself if it happened",
+"I don't mean I'm depressed",
+"I just havent found happiness",
+"I have no reason to stop and smell the roses",
+"I almost sacrificed my whole life to science and that kinda shit",
+"I wanna get hit by a car like just fucking do it please",
+"I hate the fucking psets and I walk in front of cars every morning hoping \
+that today will be the day",
+"I'm so fucking glad that I have broken up with my girlfriend",
+"All I really want is for my family to be proud of me",
+"They encourage and support everything I do",
+"I don't mean to brag but I took a shower yesterday",
+"How do you not feel jealous when ur significant other starts hanging out a \
+ton with another person of the opposite gender?",
+"It's been about a week since I broke it off with my ex and each \
+day my heart aches just a little more",
+"I just want to have sex like all the time",
+"Is that too much to ask for?",
+"I got a last minute internship by hooking up with a random person in \
+a bar in Boston",
+"When I meet people Im interested in dating them largely for their personality",
+"I just want a straight guy that likes getting rimmed",
+"I wonder how my friend's girlfriend would feel if she knew how close he \
+was to other girls",
+"Like this if you've got some personal things you'd like to talk to someone \
+experienced about",
+"Seeing the girl you love dating one of your best friend is straight up torture",
+"Not gonna lie I really like girls with deep voices",
+"Like I'm pretty sure most men sincerely want to help you orgasm",
+"I'm on the brink of failing a couple classes and I'm sure it's because \
+I don't care",
+"I'm happy when I know it probably isn't the best time to be content",
+"Something's up and I don't know what",
+"Maybe I just genuinely dislike these classes and I need to change my major",
+"I've been a strong independent and very happy single woman my whole life",
+"Any girls willing to take my virginity?",
+"Im a freshmen guy and have hooked up with about 8 girls since I came here",
+"I just want someone to sing me to sleep every night",
+"Why do professors here think undergrads are not worth their time?",
+"I think I fell in love with you for a second there",
+"I deserve an academy award for every orgasm I have faked on this campus",
+"You know that moment when you bomb a test and literally dont care at all?",
+"I got full points on a pset for a proof I pulled out the ass",
+"I dated people in senior year bc I was bored",
+"I loved you with everything I had",
+"And I can't help but wonder why",
+"MIT has just not been too hard for me",
+"If I could succeed anywhere why did I even come here?",
+"I am sexually frustrated",
+"I'd be happier with higher GPA and self-esteem elsewhere",
+"I have something to get off my chest",
+"A lot of my friends have graduated and are doing real world stuff",
+"I just wish there was an easy way to initiate conversations without them \
+seeming so sudden or out of place",
+"I'm fucking someone I don't even like just because his place is far enough \
+from the bubble that it finally allows me to stop agonizing about work and \
+feel normal for a bit",
+"It annoys the shit out of me probably more than it should",
+"I think I have a psychological problem that only she can help with",
+"I feel like at some point these feelings are supposed to fade",
+"People just need some time to breathe and be human",
+"MIT has been an incredible experience for me",
+"I used to be very social but I guess no one wants to be around me now that \
+I'm not always happy",
+"I miss being in a relationship",
+"I loved with all my heart at the time",
+"MIT blue-balled me harder than my girlfriend does with that school \
+closing email",
+"I can't believe this girl is friends with me she's so cool and amazing \
+and I feel blessed that she even wants to hang out with me",
+"Every scrap of free time I spent with you to the detriment of my sleep and \
+work because I thought you were worth it",
+"You crushed my heart by making me believe in something that wasn't there",
+"I just want someone to cuddle me for a few minutes before I return to \
+studying to death"
+];
+
+var model = {};
+for (var line of data) {
+  line = line.toLowerCase().split(" ");
+  for (var el of line.entries()){
+    var [i, word] = el;
+    if (i == line.length - 1){
+      var temp = (model["END"] ? model["END"] : []);
+      model["END"] = temp.concat([word]);
+    } else {
+      if (i == 0){
+        var temp = (model["START"] ? model["START"] : []);
+        model["START"] = temp.concat([word]);
+      }
+      var temp = (model[word] ? model[word] : []);
+      model[word] = temp.concat([line[i+1]]);
+    }
+  }
+}
+
+function get_confession(model) {
+  var output = [];
+  var options = [];
+  while (true) {
+    if (output.length == 0) {
+      options = model["START"];
+    } else if (model["END"].includes(output[output.length - 1])) {
+      if (output.length < 6) {
+        options = model["START"];
+      } else {
+        break;
+      }
+    } else {
+      options = model[output[output.length - 1]];
+    }
+    output.push(options[Math.floor(Math.random() * options.length)]);
+  }
+  var temp = output.join(" ")
+  return temp.charAt(0).toUpperCase() + temp.slice(1);
+}
+
+document.getElementById("c1").innerHTML = get_confession(model);
+document.getElementById("c2").innerHTML = get_confession(model);
+</script>
+
+</html>
